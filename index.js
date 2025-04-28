@@ -1,18 +1,16 @@
-const express = require("express")
+const express = require("express");
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-
-
-app.listen (4000, ()=>{
-    console.log ("listening to port 5000")
+app.use(express.json());
 
 
-})
+app.get("/api", (req, res) => {
+  res.status(200).json({
+    message: "connected successfully"
+  });
+});
 
-app.get ("a/pi", (re, res)=>{
-    res.status=  200(
- console.log(  "connected successfully")
-    )
-} )
+app.listen(5000, () => {
+  console.log("Listening on port 5000");
+});
